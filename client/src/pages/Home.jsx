@@ -23,7 +23,7 @@ const Home = () => {
               <path d="M12 13v8"></path>
               <path d="M12 3v3"></path>
             </svg>
-            <span className="sr-only">Mentorship Platform</span>
+            <span className="sr-only">WanderLust</span>
           </a>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <a
@@ -42,13 +42,7 @@ const Home = () => {
               className="text-sm font-medium hover:underline underline-offset-4"
               href="#"
             >
-              Mentors
-            </a>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
-            >
-              Mentees
+              Locations
             </a>
             <a
               className="text-sm font-medium hover:underline underline-offset-4"
@@ -64,11 +58,10 @@ const Home = () => {
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Welcome to MentorHub
+                    Welcome to WanderLust
                   </h1>
                   <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl ">
-                    Connect, learn, and grow with mentors and mentees from
-                    around the world.
+                  Discover with Your Lens, Explore with Your Voice:<br></br> The Future of Travel Planning Unveiled.
                   </p>
                 </div>
                 <div className="space-x-4">
@@ -79,9 +72,9 @@ const Home = () => {
                       navigate("/menteeauth");
                     }}
                   >
-                    Find a Mentor
+                    Get Started
                   </a>
-                  <a
+                  {/* <a
                     className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                     href="#"
                     onClick={() => {
@@ -89,7 +82,7 @@ const Home = () => {
                     }}
                   >
                     Become a Mentor
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
@@ -102,11 +95,10 @@ const Home = () => {
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-              Experience the mentorship from the best mentors in the world.
+            Speak Your Destination, Hear Your Journey: Travel Planning Reimagined.
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-              Focus on academics instead of managing career choices with the
-              best mentors in the world.
+            Unlock Academic Excitement: Navigate Your Learning Journey with Cutting-Edge Guidance and Multimodal Interactions.
             </p>
           </div>
           <div className="flex space-x-4 lg:justify-end">
@@ -412,7 +404,7 @@ const Home = () => {
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              Experience the mentorship from the best mentors in the world.
+            Adventure Calls, Pictures Answer: Plan with Ease, Explore with Joy.
             </h2>
             <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Let your team focus on shipping features instead of managing
@@ -444,7 +436,7 @@ const Home = () => {
       </section>
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
         <p className="text-xs text-gray-500 ">
-          © 2024 MentorHub. All rights reserved.
+          © 2024 WanderLust. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
           <a className="text-xs hover:underline underline-offset-4" href="#">
