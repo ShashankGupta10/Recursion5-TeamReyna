@@ -81,30 +81,34 @@ def get_data_from_url():
     else:
         return jsonify({'output': 'No image provided'})
 
+
 @app.route('/tts', methods=['POST'])
 def text_to_speech():
     speech_file_path = "static/speech.mp3"
     response = client.audio.speech.create(
-    model="tts-1",
-    voice="alloy",
-    input=request.get_json()['text']
+        model="tts-1",
+        voice="alloy",
+        input=request.get_json()['text']
     )
 
     response.stream_to_file(speech_file_path)
     return send_file(speech_file_path, as_attachment=True)
 
+
 @app.route('/chat', methods=['POST'])
 def chat():
     payload = request.get_json()
-    # answer = chat_llm.predict_messages([
-    #     messages=[{
-    #         "role": "system",
-    #         "content": "You are a travel guide. The user is interested in visiting Paris and trying French cuisine. Suggest places to visit and cuisines to try."
-    #     }, {
-    #         "role": "user",
-    #         "content": payload['message']
-    #     }]
-    # ])
+    answer = client.chat.completions.create(
+        messages=[{
+            "role": "system",
+            "content": "You are a travel guide. The user is interested in visiting Paris and trying French cuisine. Suggest places to visit and cuisines to try."
+        }, {
+            "role": "user",
+            "content": payload['message']
+        }],
+        model="gpt-3.5-turbo")
+    return jsonify(answer['choices'][0]['message']['content'])
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
