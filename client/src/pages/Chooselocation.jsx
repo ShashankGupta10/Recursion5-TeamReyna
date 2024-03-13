@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
-import CheckFlight from "./CheckFlight";
+import CheckFlight from "../components/CheckFlight";
 
 const Chooselocation = () => {
   const [selectedDate, setSelectedDate] = useState(null);

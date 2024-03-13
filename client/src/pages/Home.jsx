@@ -5,45 +5,47 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-r from-[#020D41] to-[#1F1979] ">
-      <div className="flex flex-col min-h-screen">
-        <main className="flex-1">
-          <div className="flex justify-around w-full py-12 md:py-24 lg:py-32 xl:py-48">
-            <div className="container md:px-6 w-3/6">
-              <div className="flex flex-col items-center space-y-4 text-center">
+      {/* <div className="flex flex-col min-h-screen"> */}
+        {/* <main className="flex-1 m-2 bg-white"> */}
+          {/* <div className="justify-around w-full py-2 md:py-24 lg:py-32 xl:py-48"> */}
+            <div className="container gap-5 p-10 mt-2 bg-gray-100 flex flex-row mx-auto md:px-6 w-full">
+
+              <div className="flex w-2/4 flex-col justify-center items-center space-y-4 text-center">
                 <div className="space-y-2">
-                  <h1 className="text-white text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+                  <h1 className="text-[#1F1979] text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
                     Welcome to Travel Planner
                   </h1>
-                  <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl ">
+                  <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl ">
                     Discover with Your Lens, Explore with Your Voice:<br></br>{" "}
                     The Future of Travel Planning Unveiled.
                   </p>
                 </div>
                 <div className="space-x-4">
                   <button
-                    className="inline-flex h-9 text-[#1F1979] items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
+                    className="inline-flex h-9 text-white items-center justify-center rounded-md bg-[#1F1979] px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
                     onClick={() => {
                       navigate("/login");
                     }}
                   >
-                    Get Started
-                  </button>
-                  {/* <a
-                    className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                    href="#"
-                    onClick={() => {
-                      navigate("/mentorauth");
-                    }}
-                  >
-                    Become a Mentor
-                  </a> */}
+                    Get Started <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                                    <path fillRule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clipRule="evenodd" />
+                                </svg>
+                  </button> 
                 </div>
               </div>
+              <div className="w-2/4 flex-none mt-14 md:mt-0 md:max-w-xl">
+                        <img
+                            src="image2.png"
+                            className=" md:rounded-tl-[108px] h-full w-full"
+                            alt=""
+                        />
+                    </div>
+
+
             </div>
-            {/* <Avatar /> */}
-          </div>
-        </main>
-      </div>
+          {/* </div> */}
+        {/* </main> */}
+      {/* </div> */}
 
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
@@ -264,8 +266,8 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid py-24 items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10 bg-white text-black">
+      {/* <section className="w-full py-12 md:py-24 lg:py-32"> */}
+        <div className="container grid py-24 items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10  bg-gray-100  text-[#1F1979]">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Meet our Customers
@@ -293,8 +295,8 @@ const Home = () => {
             </a>
           </div>
         </div>
-      </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-[#020D41] to-[#1F1979] text-white ">
+      {/* </section> */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 text-[#1F1979] ">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
