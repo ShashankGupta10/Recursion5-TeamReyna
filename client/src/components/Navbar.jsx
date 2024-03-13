@@ -23,8 +23,8 @@ const Navbar = () => {
 
             {localStorage.getItem('email') ? (
               <nav className="text-white ml-auto flex gap-4 sm:gap-6">
-                <a className="text-sm font-medium hover:underline underline-offset-4" href="#">
-                  Profile
+                <a className="text-sm font-medium hover:underline underline-offset-4" href="/">
+                 Home
                 </a>
 
                 <a className="text-sm font-medium hover:underline underline-offset-4" href="/chat">
