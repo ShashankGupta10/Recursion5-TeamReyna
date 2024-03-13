@@ -5,54 +5,8 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-[#020D41] to-[#1F1979] ">
       <div className="flex flex-col min-h-screen">
-        <header className="px-4 lg:px-6 h-14 flex items-center">
-          <a className="flex items-center justify-center" href="#">
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6"
-            >
-              <path d="M18 6H5a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h13l4-3.5L18 6Z"></path>
-              <path d="M12 13v8"></path>
-              <path d="M12 3v3"></path>
-            </svg> */}
-            <img className="h-10 w-27" src="logo_white.svg" alt="" />
-            <span className="sr-only text-white">WanderLust</span>
-          </a>
-          <nav className=" text-white ml-auto flex gap-4 sm:gap-6">
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
-            >
-              Home
-            </a>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
-            >
-              About
-            </a>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
-            >
-              Locations
-            </a>
-            <a
-              className="text-sm font-medium hover:underline underline-offset-4"
-              href="#"
-            >
-              Contact
-            </a>
-          </nav>
-        </header>
+      
+
         <main className="flex-1">
           <div className="flex justify-around w-full py-12 md:py-24 lg:py-32 xl:py-48">
             <div className="container md:px-6 w-3/6">

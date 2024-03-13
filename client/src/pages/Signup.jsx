@@ -12,6 +12,7 @@ const Signup = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
+    navigate('/chat');
     e.preventDefault();
     console.log("Form submitted", formData);
   };
