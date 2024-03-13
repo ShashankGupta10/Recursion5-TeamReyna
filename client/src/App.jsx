@@ -4,7 +4,7 @@ import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Chat from "./pages/Chat";
 import Pricing from "./pages/Pricing";
-import Navbar from "./pages/Navbar";
+import Navbar from "./components/Navbar";
 import CheckFlight from "./components/CheckFlight";
 import Chooselocation from "./components/Chooselocation";
 function App() {

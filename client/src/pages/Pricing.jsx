@@ -1,63 +1,65 @@
+import Footer from "../components/Footer";
+
 const Pricing = () => {
   const plans = [
     {
-      name: "Basic plan",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 0,
+      name: "Free Trial",
+      desc: "Explore the essentials with our limited free trial plan, offering a sneak peek into the world of travel planning.",
+      price: "0",
       isMostPop: false,
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Temporay",
+        "Visual Destination Recognition",
+        "Limited Conversational Inquiry",
+        "Basic Spoken Recommendations",
+        "Access to Live Events (Limited)",
+        "Community Building (Basic)",
       ],
     },
     {
-      name: "Startup",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 35,
+      name: "Standard Plan",
+      desc: "Unlock the full potential of travel planning with our standard plan, providing access to a comprehensive set of features and facilities.",
+      price: "50k",
       isMostPop: true,
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Visual Destination Recognition",
+        "Conversational Inquiry",
+        "Spoken Recommendations",
+        "Live Events and Workshops",
+        "Community Building",
+        "Powerful Search",
       ],
     },
     {
-      name: "Enterprise",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      price: 60,
+      name: "Enterprise Plan",
+      desc: "Maximize collaboration and efficiency with our enterprise plan, tailored for teams. Share logins seamlessly enhanced productivity.",
+      price: "3L",
       isMostPop: false,
       features: [
-        "Curabitur faucibus",
-        "massa ut pretium maximus",
-        "Sed posuere nisi",
-        "Pellentesque eu nibh et neque",
-        "Suspendisse a leo",
-        "Praesent quis venenatis ipsum",
-        "Duis non diam vel tortor",
+        "Visual Destination Recognition",
+        "Conversational Inquiry",
+        "Spoken Recommendations",
+        "Live Events and Workshops",
+        "Community Building",
+        "Powerful Search",
+        "Team Login Sharing",
+        "Feedback and Ratings System",
+        "Advanced Matching Algorithms",
       ],
     },
   ];
 
   return (
-    <section className="py-14">
-      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
+    <section className="">
+      <div className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8 my-10">
         <div className="relative max-w-xl mx-auto sm:text-center">
           <h3 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-            Pricing for all sizes
+            Pricing to Fit Your Needs
           </h3>
           <div className="mt-3 max-w-xl">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              efficitur consequat nunc.
+              Discover flexible pricing options designed  to accommodate <br></br> various
+              needs and preferences.
             </p>
           </div>
         </div>
@@ -79,7 +81,7 @@ const Pricing = () => {
               <div className="p-8 space-y-4 border-b">
                 <span className="text-indigo-600 font-medium">{item.name}</span>
                 <div className="text-gray-800 text-3xl font-semibold">
-                  ${item.price}{" "}
+                  ₹{item.price}{" "}
                   <span className="text-xl text-gray-600 font-normal">/mo</span>
                 </div>
                 <p>{item.desc}</p>
@@ -113,6 +115,7 @@ const Pricing = () => {
           ))}
         </div>
       </div>
+      <Footer />
     </section>
   );
 };

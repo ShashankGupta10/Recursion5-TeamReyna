@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 
+
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
@@ -71,14 +72,14 @@ const Chat = () => {
 
   return (
     <div>
-      <div className="sticky top-0 z-50 border-b border-gray-300 bg-white py-5 px-8 text-left text-sm text-gray-800">
+      {/* <div className="sticky top-0 z-50 border-b border-gray-300 bg-white py-5 px-8 text-left text-sm text-gray-800">
         <h4 className="inline-block py-1 text-left font-sans font-semibold normal-case">
           Jatin Aristotle
         </h4>
-      </div>
+      </div> */}
       <div className="flex-grow px-8 pt-8 text-left text-gray-700">
         <div className="relative mb-6 text-center">
-          <span className="relative bg-white px-2 text-sm text-gray-600">
+          <span className="relative bg-white px-2 text-sm font-medium text-gray-600">
             {new Date().toDateString()}
           </span>
         </div>
@@ -130,14 +131,14 @@ const Chat = () => {
             </svg>
           </div>
           {uploadbtn && (
-            <div className="absolute bottom-24 left-[.5%] flex justify-center gap-4 items-center bg-gray-300 p-4 rounded-lg">
+            <div className="absolute bottom-24 left-[.5%] flex justify-center gap-4 items-center bg-gray-200 p-4 rounded-lg">
               <div className=" cursor-pointer" onClick={triggerFileInput}>
                 <input
                   type="file"
                   accept=".png, .jpeg, .jpg"
                   className="hidden"
                   ref={fileInput}
-                />
+                />  
                 <svg
                   className="w-6 h-6 "
                   aria-hidden="true"
@@ -162,12 +163,12 @@ const Chat = () => {
               </div>
               <div className="font-bold text-center">OR</div>
               <div className="flex gap-2 justify-center items-center">
-                <label>Enter Link</label>
+                <label className="w-36">Enter Link</label>
                 <input
                   type="text"
                   onChange={handleInputChange}
-                  className="rounded-lg focus:outline-none px-4 w-64"
-                />
+                  className="w-full p-2 text-gray-500 outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
+                  />
               </div>
               <div>
                 <button
@@ -194,6 +195,7 @@ const Chat = () => {
           </button>
         </div>
       </div>
+
     </div>
   );
 };
