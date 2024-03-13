@@ -23,7 +23,7 @@ const Home = () => {
               <path d="M12 13v8"></path>
               <path d="M12 3v3"></path>
             </svg> */}
-            <img className="h-6 w-6" src="logo_white.svg" alt="" />
+            <img className="h-10 w-27" src="logo_white.svg" alt="" />
             <span className="sr-only text-white">WanderLust</span>
           </a>
           <nav className=" text-white ml-auto flex gap-4 sm:gap-6">
