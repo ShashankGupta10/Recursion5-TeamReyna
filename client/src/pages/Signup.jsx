@@ -15,6 +15,7 @@ const Signup = () => {
     navigate('/chat');
     e.preventDefault();
     console.log("Form submitted", formData);
+    localStorage.setItem("email", formData.email);
   };
   return (
     <main className="w-full flex">

@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="bg-gradient-to-r from-[#020D41] to-[#1F1979] ">
       <div className="flex flex-col min-h-screen">
-      
-
         <main className="flex-1">
           <div className="flex justify-around w-full py-12 md:py-24 lg:py-32 xl:py-48">
             <div className="container md:px-6 w-3/6">
@@ -16,19 +15,19 @@ const Home = () => {
                     Welcome to Travel Planner
                   </h1>
                   <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl ">
-                  Discover with Your Lens, Explore with Your Voice:<br></br> The Future of Travel Planning Unveiled.
+                    Discover with Your Lens, Explore with Your Voice:<br></br>{" "}
+                    The Future of Travel Planning Unveiled.
                   </p>
                 </div>
                 <div className="space-x-4">
-                  <a
-                    className="inline-flex h-9 text-[#1F1979] items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
-                    href="#"
+                  <button
+                    className="inline-flex h-9 text-[#1F1979] items-center justify-center rounded-md bg-white px-4 py-2 text-sm font-medium shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
                     onClick={() => {
-                      navigate("/menteeauth");
+                      navigate("/login");
                     }}
                   >
                     Get Started
-                  </a>
+                  </button>
                   {/* <a
                     className="inline-flex h-9 items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                     href="#"
@@ -50,15 +49,17 @@ const Home = () => {
         <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold text-[#1F1979] tracking-tighter sm:text-4xl md:text-5xl">
-            Speak Your Destination, Hear Your Journey: Travel Planning Reimagined.
+              Speak Your Destination, Hear Your Journey: Travel Planning
+              Reimagined.
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-            Unlock Academic Excitement: Navigate Your Learning Journey with Cutting-Edge Guidance and Multimodal Interactions.
+              Unlock Academic Excitement: Navigate Your Learning Journey with
+              Cutting-Edge Guidance and Multimodal Interactions.
             </p>
           </div>
           <div className="flex space-x-4 lg:justify-end">
             <a
-              className="inline-flex h-10 items-center justify-center rounded-md bg-[#1F1979] px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
+              className="inline-flex h-10 items-center justify-center rounded-md bg-[#1F1979] px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-[#1f1979b0] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
               href="#"
             >
               Contact Sales
@@ -72,16 +73,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+      <section className="w-full py-12 ">
         <div className="container px-4 md:px-6">
           <div className="grid gap-6 items-center">
             <div className="flex flex-col justify-center space-y-8 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-200">
-                Embark on Seamless Journeys
+                  Embark on Seamless Journeys
                 </h1>
                 <p className="max-w-[600px] text-white md:text-xl block mx-auto">
-                Explore the next frontier in travel planning with our six innovative features, designed to make your adventures extraordinary.
+                  Explore the next frontier in travel planning with our six
+                  innovative features, designed to make your adventures
+                  extraordinary.
                 </p>
               </div>
               <div className="w-full max-w-full space-y-4 mx-auto">
@@ -105,10 +108,11 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-white">
-                    Visual Destination Recognition
+                      Visual Destination Recognition
                     </h2>
                     <p className="text-white">
-                    Instantly identify travel destinations from your uploaded photos, making planning as easy as capturing moments.
+                      Instantly identify travel destinations from your uploaded
+                      photos, making planning as easy as capturing moments.
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -131,11 +135,12 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-white">
-                    Conversational Inquiry
+                      Conversational Inquiry
                     </h2>
                     <p className="text-white">
-                    Ask questions about your destinations using natural language, receiving personalized and informative responses.
-
+                      Ask questions about your destinations using natural
+                      language, receiving personalized and informative
+                      responses.
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -157,11 +162,11 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-white">
-                    Spoken Recommendations
+                      Spoken Recommendations
                     </h2>
                     <p className="text-white">
-                    Receive spoken recommendations based on your preferences and questions, bringing your travel plans to life.
-
+                      Receive spoken recommendations based on your preferences
+                      and questions, bringing your travel plans to life.
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -244,11 +249,13 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-white">
-                    Community Building
+                      Community Building
                     </h2>
                     <p className="text-white ">
-                    Enhance the community section to foster a supportive and engaging environment. Implement features like discussion forums, interest-based groups, and a mentor/mentee showcase to encourage networking and collaboration.
-
+                      Enhance the community section to foster a supportive and
+                      engaging environment. Implement features like discussion
+                      forums, interest-based groups, and a mentor/mentee
+                      showcase to encourage networking and collaboration.
                     </p>
                   </div>
                 </div>
@@ -258,79 +265,22 @@ const Home = () => {
         </div>
       </section>
       <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
+        <div className="container grid py-24 items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10 bg-white text-black">
           <div className="space-y-3">
-            <h2 className="text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               Meet our Customers
             </h2>
-            <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
+            <p className="mx-auto max-w-[700px]  md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
               Trusted by the best mentors in the world. We help mentees of all
               the ages and backgrounds.
             </p>
           </div>
           <div className="divide-y rounded-lg border">
-            <div className="grid w-full grid-cols-3 items-stretch justify-center divide-x md:grid-cols-3">
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                {/* <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                /> */}
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                {/* <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-8">
-                <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-            </div>
-            <div className="grid w-full grid-cols-3 items-stretch justify-center divide-x md:grid-cols-3">
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                />
-              </div>
-              <div className="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
-                <img
-                  src={one}
-                  width="140"
-                  height="70"
-                  alt="Logo"
-                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
-                  // /> */}
-              </div>
-            </div>
+
           </div>
           <div className="flex justify-center space-x-4">
             <a
-              className="inline-flex h-10 items-center justify-center rounded-md bg-[#1F1979]px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
+              className="inline-flex h-10 bg-[#1F1979] text-white items-center justify-center rounded-md bg-[#1F1979]px-8 text-sm font-medium shadow transition-colors hover:bg-[#1f1979c1] px-4 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 "
               href="#"
             >
               Contact Sales
@@ -344,11 +294,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 ">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-[#020D41] to-[#1F1979] text-white ">
         <div className="container grid items-center justify-center gap-4 px-4 text-center md:px-6">
           <div className="space-y-3">
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-            Adventure Calls, Pictures Answer: Plan with Ease, Explore with Joy.
+              Adventure Calls, Pictures Answer: Plan with Ease, Explore with
+              Joy.
             </h2>
             <p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               Let your team focus on shipping features instead of managing
@@ -363,7 +314,7 @@ const Home = () => {
                 type="email"
               />
               <button
-                className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+                className=" bg-white text-black hover:bg-gray-200 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
                 type="submit"
               >
                 Sign Up
@@ -378,22 +329,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer className="flex text-white flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 ">
-          © 2024 WanderLust. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Facebook
-          </a>
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Twitter
-          </a>
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Instagram
-          </a>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 };
