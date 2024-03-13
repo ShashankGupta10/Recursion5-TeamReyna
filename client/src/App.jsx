@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/selecloc" element={<Chooselocation />} />
+        <Route path="/selectloc" element={<Chooselocation />} />
         <Route path="/flights" element={<CheckFlight />} />
       </Routes>
     </BrowserRouter>

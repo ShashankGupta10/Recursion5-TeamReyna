@@ -4,8 +4,8 @@ const CheckFlight = ({ from, to, date }) => {
   const loggedInUser = getUser();
   return (
     <div>
-      <section class="py-1">
-        <h1 class="mb-4 text-center font-sans text-5xl font-bold text-gray-900">
+      <section class="py-1 ">
+        <h1 class="mb-4  text-center font-sans text-5xl font-bold text-gray-900">
           Flights Accomodations<span class="text-blue-600">.</span>
         </h1>
         <div class=" mx-auto flex flex-col max-w-screen-xl  gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
@@ -34,10 +34,10 @@ const CheckFlight = ({ from, to, date }) => {
 
               <h2 class="text-slate-700">{`${from} to ${to}`}</h2>
               <p class="text-slate-400 mt-1 text-sm">{`Date: ${date}`}</p>
-              <div class="mt-5 flex flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
+              <div class="mt-5 flex flex-col w-56 space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
                 <div class="">
                   Amount
-                  <span class="ml-2 mr-3 rounded-full bg-green-100 px-2 py-0.5 text-green-900">
+                  <span class="ml-2 mr-3  rounded-full bg-green-100 px-2 py-0.5 text-green-900">
                     {" "}
                     ₹ 8,080{" "}
                   </span>
