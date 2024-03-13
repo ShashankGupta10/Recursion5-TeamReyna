@@ -30,6 +30,9 @@ const Navbar = () => {
                 <a className="text-sm font-medium hover:underline underline-offset-4" href="/chat">
                   Chat
                 </a>
+                <a className="text-sm font-medium hover:underline underline-offset-4" href="/selectloc">
+                 Flight
+                </a>
                 <a className="text-sm font-medium hover:underline underline-offset-4" href="/pricing">
                   Pricing
                 </a>

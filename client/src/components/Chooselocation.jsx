@@ -3,9 +3,12 @@ import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
+import CheckFlight from "./CheckFlight";
 
 const Chooselocation = () => {
   const [selectedDate, setSelectedDate] = useState(null);
+
+  const [trips,setTrips]=useState(false);
 
   const handleDateChange = (date) => {
     // Update the state with the selected date
@@ -20,10 +23,15 @@ const Chooselocation = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
-    navigate("/flights");
+
     e.preventDefault();
     console.log("Form submitted", formData, selectedDate);
   };
+
+  const handleTrips = () =>{
+    setTrips(true);
+  }
+
   const navigate = useNavigate();
   return (
     <div>
@@ -95,15 +103,19 @@ const Chooselocation = () => {
         </div>
         <div className="my-auto">
           <button
+            onClick={handleTrips}
             class="w-full px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
-            onClick={() => {
-              navigate("/flights");
-            }}
+           
           >
             Check Trips
           </button>
         </div>
       </form>
+      {
+        trips && (
+          <CheckFlight from={formData.from} to={formData.to} date={selectedDate} />
+        )
+      }
     </div>
   );
 };
