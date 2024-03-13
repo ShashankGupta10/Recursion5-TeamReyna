@@ -58,7 +58,7 @@ const Home = () => {
               <div className="flex flex-col items-center space-y-4 text-center">
                 <div className="space-y-2">
                   <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                    Welcome to WanderLust
+                    Welcome to Travel Planner
                   </h1>
                   <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl ">
                   Discover with Your Lens, Explore with Your Voice:<br></br> The Future of Travel Planning Unveiled.
@@ -123,11 +123,10 @@ const Home = () => {
             <div className="flex flex-col justify-center space-y-8 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none bg-clip-text text-transparent bg-gradient-to-r from-black to-gray-200">
-                  Discover Our Unique Features
+                Embark on Seamless Journeys
                 </h1>
                 <p className="max-w-[600px] text-black md:text-xl block mx-auto">
-                  Our features are designed to enhance your productivity and
-                  streamline your workflow.
+                Explore the next frontier in travel planning with our six innovative features, designed to make your adventures extraordinary.
                 </p>
               </div>
               <div className="w-full max-w-full space-y-4 mx-auto">
@@ -151,13 +150,10 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-black">
-                      Advanced Matching Algorithms
+                    Visual Destination Recognition
                     </h2>
                     <p className="text-black">
-                      Utilize an intelligent algorithm that considers academic
-                      and career goals, personal preferences, learning styles,
-                      and areas of expertise to pair mentors and mentees
-                      effectively.
+                    Instantly identify travel destinations from your uploaded photos, making planning as easy as capturing moments.
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -180,14 +176,11 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-black">
-                      Live Events and Workshops
+                    Conversational Inquiry
                     </h2>
                     <p className="text-black">
-                      Integrate a feature for hosting live events, workshops,
-                      and webinars within the platform. This allows for
-                      real-time interaction between mentors and mentees,
-                      including Q&A sessions, panel discussions, and
-                      collaborative learning experiences.
+                    Ask questions about your destinations using natural language, receiving personalized and informative responses.
+
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -209,13 +202,11 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-black">
-                      Community Building
+                    Spoken Recommendations
                     </h2>
                     <p className="text-black">
-                      Enhance the community section to foster a supportive and
-                      engaging environment. Implement features like discussion
-                      forums, interest-based groups, and a mentor/mentee
-                      showcase to encourage networking and collaboration.
+                    Receive spoken recommendations based on your preferences and questions, bringing your travel plans to life.
+
                     </p>
                   </div>
                   <div className="flex flex-col items-center space-y-2  p-4 rounded-lg">
@@ -298,13 +289,11 @@ const Home = () => {
                       </svg>
                     </div>
                     <h2 className="text-xl font-bold text-black">
-                      Feedback and Ratings System
+                    Community Building
                     </h2>
                     <p className="text-zinc-600 ">
-                      Implement a transparent feedback and ratings system where
-                      mentees can provide reviews and ratings for their mentors.
-                      This helps maintain accountability and assists new mentees
-                      in choosing the right mentor.
+                    Enhance the community section to foster a supportive and engaging environment. Implement features like discussion forums, interest-based groups, and a mentor/mentee showcase to encourage networking and collaboration.
+
                     </p>
                   </div>
                 </div>
