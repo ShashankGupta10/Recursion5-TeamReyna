@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Login = () => {
@@ -10,13 +11,27 @@ const Login = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
-    localStorage.setItem("email", formData.email);
-    navigate('/chat');
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/login",
+        formData
+      );
+      console.log("Response", response.data);
+      if (response.data.output === true) {
+        localStorage.setItem("email", formData.email);
+        localStorage.setItem("name", response.data.name);
+        navigate("/chat");
+      } else {
+        alert("Invalid credentials");
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
   };
-  
+
   return (
     <main className="w-full flex">
       <div className="relative flex-1 hidden items-center justify-center h-screen bg-gray-900 lg:flex">
@@ -112,7 +127,10 @@ const Login = () => {
                 className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
               />
             </div>
-            <button type="submit"  className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
+            <button
+              type="submit"
+              className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+            >
               Log in
             </button>
           </form>

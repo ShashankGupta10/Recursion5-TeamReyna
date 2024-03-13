@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 const Signup = () => {
@@ -11,11 +12,26 @@ const Signup = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
-    navigate('/chat');
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
-    localStorage.setItem("email", formData.email);
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/register",
+        formData
+      );
+      console.log("Response", response.data);
+      if (response.data.output === true) {
+        localStorage.setItem("email", formData.email);
+        localStorage.setItem("name", formData.name);
+        navigate("/chat");
+      } else {
+        alert("Invalid credentials");
+      }
+    } catch (error) {
+      console.log("Error", error);
+    }
   };
   return (
     <main className="w-full flex">

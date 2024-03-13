@@ -7,7 +7,6 @@ const Chat = () => {
   const [uploadbtn, showUploadbtn] = useState(false);
   const [openmodal, setOpenmodal] = useState(false);
   const [link, setLink] = useState("");
-
   const fileInput = useRef(null);
 
   useEffect(() => {
@@ -18,34 +17,35 @@ const Chat = () => {
     setMessages([
       {
         message: "hello",
-        user: "",
+        user: "AI",
         audio: "",
       },
     ]);
   }, []);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (message != "") {
       console.log(message);
       const obj = {
         message: message,
-        user: localStorage.getItem("email") || "",
+        user: localStorage.getItem("name") || "Ajay",
       };
 
+      const response = await axios.post("http://localhost:5000/chat", {
+        message: obj.message,
+      });
+      console.log("Response from :", response);
+
       const obj1 = {
-        message:
-          "Thank you for the prompt. Given that you intend to visit India, I've compiled a list of recommended cuisines and destinations throughout the country. Let's begin with the culinary delights India has to offer, starting with its diverse range of cuisines:\n\n1. Punjabi Cuisine - Famous for tandoori dishes, buttery sabjis, and flavorful biryanis, it's a must-try when visiting northern India. \n\n2. Gujarati Cuisine - This cuisine is known for its vegetarian dishes, such as homemade pickles, spicy shaak (vegetable dishes), and delicious chaats. \n\n3. Tamil Nadu Cuisine - Providing a more southern taste, dishes involve a blend of spices with a heightened use of tamarind and coconut. From aromatic filter coffee to savory meals like Idly and Dosa, accompanied by spicy gravies known as 'curries,' you're in for a treat. \n\n4. Hyderabadi Cuisine - Offering a unique blend of Mughal and Telugu traditions, you'll discover mouth-watering dishes like the famed Hyderabadi Biryani and the aromatic Haleem. \n\nNow, let's explore some destinations across India. Remember that India is a vast country, so I've narrowed the list to highlights, including the",
+        message: response.data,
         user: "AI",
         audio:
           "https://file01.fpt.ai/text2speech-v5/short/2024-03-13/d625a0570a14281837aca340711ebf3e.mp3",
-        isPlay: "false",
       };
       setMessages([...messages, obj, obj1]);
       setMessage("");
     } else alert("Please enter a valid message");
   };
-
-  // const handleSubmit
 
   const handleImageAndLink = () => {
     if (fileInput.current && fileInput.current.files[0]) {
@@ -110,21 +110,19 @@ const Chat = () => {
   const triggerFileInput = () => {
     fileInput.current.click();
   };
-  const playAudio = (audioUrl) => {
-
-    const audio = new Audio(audioUrl);
-    audio.onended = () => {
-    
-    };
-    audio.play();
+  const playAudio = async (msg) => {
+    if (msg.audio === "") {
+      const response = await axios.post("http://localhost:5000/tts", {
+        text: msg.message,
+      });
+      console.log(response);
+    }
+    // const playAudio = new Audio(audioUrl);
+    // playAudio.play();
+    // playAudio.onended = () => {};
   };
   return (
     <div>
-      {/* <div className="sticky top-0 z-50 border-b border-gray-300 bg-white py-5 px-8 text-left text-sm text-gray-800">
-        <h4 className="inline-block py-1 text-left font-sans font-semibold normal-case">
-          Jatin Aristotle
-        </h4>
-      </div> */}
       <div className="flex-grow px-8 pt-8 pb-16 text-left text-gray-700">
         <div className="relative mb-6 text-center">
           <span className="relative bg-white px-2 text-sm font-medium text-gray-600">
@@ -132,7 +130,7 @@ const Chat = () => {
           </span>
         </div>
         {messages.map((msg, index) =>
-          msg.user === localStorage.getItem("email") ? (
+          msg.user === localStorage.getItem("name") ? (
             <div className="relative mb-6 text-left" key={index}>
               <div className="text-gray-700">
                 <div className="relative float-right sm:inline-block rounded-md bg-blue-700 py-3 px-4 text-white">
@@ -148,45 +146,33 @@ const Chat = () => {
                 <div className="relative float-left sm:inline-block rounded-md bg-gray-200 py-3 px-4">
                   <p className="text-sm text-indigo-600 font-bold">{"AI"}</p>
                   <p className="text-sm">{msg.message}</p>
-                  {msg.audio !== "" && (
-                    <button
-                      id={index}
-                      onClick={() => {
-                        msg.isPlay = true;
-                        playAudio(msg.audio);
-                      }}
-                      className=" flex flex-row text-sm mt-2  px-3 py-1 rounded-xl  border-2 text-indigo-600 border-indigo-600"
+                  <button
+                    id={index}
+                    onClick={() => {
+                      playAudio(msg);
+                    }}
+                    className=" flex flex-row text-sm mt-2  px-3 py-1 rounded-xl  border-2 text-indigo-600 border-indigo-600"
+                  >
+                    <svg
+                      key={index}
+                      className="w-5 h-5 text-indigo-600"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
                     >
-                      {msg.isPlay ? (
-                        <>
-                          <svg
-                            className="w-5 h-5 text-indigo-600"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M8 18V6l8 6-8 6Z"
-                            />
-                          </svg>
-                          <span>Play</span>
-                        </>
-                      ) : (
-                        <div className="flex items-center justify-center space-x-2">
-                          <div className="w-2 h-2 rounded-full animate-pulse bg-indigo-600"></div>
-                          <div className="w-2 h-2 rounded-full animate-pulse bg-indigo-600"></div>
-                          <div className="w-2 h-2 rounded-full animate-pulse bg-indigo-600"></div>
-                        </div>
-                      )}
-                    </button>
-                  )}
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M8 18V6l8 6-8 6Z"
+                      />
+                    </svg>
+                    <span>Play</span>
+                  </button>
                 </div>
               </div>
               <div className="clear-both flex text-gray-700"></div>

@@ -25,6 +25,7 @@ def application():
     return '<center style="height: 100dvh"><h1>Backend Link</h1></center>'
 
 
+
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     payload = request.get_json()
@@ -37,7 +38,7 @@ def register():
             'password': payload['password']
         })
         return jsonify({'output': True})
-    return jsonify({'output': 'EmailId already registered'})
+    return jsonify({'output':False,'message': 'EmailId already registered'})
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -46,9 +47,10 @@ def login():
     user = db.users.find_one({'email': payload['email']})
     if user is not None:
         if user['password'] == payload['password']:
-            return jsonify({'output': True})
-        return jsonify({'output': "Incorrect password"})
-    return jsonify({'output': 'No such user found'})
+            # print(user)
+            return jsonify({'output': True , 'message': "Login successful",'name':user['name']})
+        return jsonify({'output':False,'message': "Incorrect password"})
+    return jsonify({'output':False,'message': 'No such user found'})
 
 
 @app.route('/get_data_from_url', methods=['POST'])
@@ -101,7 +103,7 @@ def chat():
     answer = client.chat.completions.create(
         messages=[{
             "role": "system",
-            "content": "You are a travel guide. The user is interested in visiting Paris and trying French cuisine. Suggest places to visit and cuisines to try."
+            "content": "You are a travel guide. The user is interested in traveling places and trying cuisine. Suggest places to visit and cuisines to try."
         }, {
             "role": "user",
             "content": payload['message']
