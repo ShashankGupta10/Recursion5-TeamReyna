@@ -16,7 +16,7 @@ const CheckFlight = ({ from, to, date }) => {
             >
               <div class="group relative  overflow-hidden rounded-lg">
                 <img
-                  src="logo_black.svg"
+                  src="indigo.png"
                   alt=""
                   class=" object-cover text-gray-700"
                 />
@@ -42,9 +42,9 @@ const CheckFlight = ({ from, to, date }) => {
                     ₹ 8,080{" "}
                   </span>
                 </div>
-                <button class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
+                <a href="https://buy.stripe.com/test_28oeWj29ogmc3eMcMO" class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
                   Book
-                </button>
+                </a>
                 {/* <div class="">Salary:<span class="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">180-250k</span></div> */}
               </div>
             </div>
@@ -57,7 +57,7 @@ const CheckFlight = ({ from, to, date }) => {
             >
               <div class="group relative  overflow-hidden rounded-lg">
                 <img
-                  src="logo_black.svg"
+                  src="airindia.png"
                   alt=""
                   class=" object-cover text-gray-700"
                 />
@@ -75,7 +75,7 @@ const CheckFlight = ({ from, to, date }) => {
 
               <h2 class="text-slate-700">{`${from} to ${to}`}</h2>
               <p class="text-slate-400 mt-1 text-sm">{`Date: ${date}`}</p>
-              <div class="mt-5 flex flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
+              <div class="mt-5 flex w-56 flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
                 <div class="">
                  Amount:
                   <span class="ml-2 mr-3 rounded-full bg-green-100 px-2 py-0.5 text-green-900">
@@ -83,9 +83,9 @@ const CheckFlight = ({ from, to, date }) => {
                     ₹9,100{" "}
                   </span>
                 </div>
-                <button class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
+                <a href="https://buy.stripe.com/test_cN27tR9BQ9XO4iQcMN" class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
                   Book
-                </button>
+                </a>
                 {/* <div class="">Salary:<span class="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">180-250k</span></div> */}
               </div>
             </div>
@@ -98,7 +98,7 @@ const CheckFlight = ({ from, to, date }) => {
             >
               <div class="group relative  overflow-hidden rounded-lg">
                 <img
-                  src="logo_black.svg"
+                  src="vistara.png"
                   alt=""
                   class=" object-cover text-gray-700"
                 />
@@ -116,7 +116,7 @@ const CheckFlight = ({ from, to, date }) => {
 
               <h2 class="text-slate-700">{`${from} to ${to}`}</h2>
               <p class="text-slate-400 mt-1 text-sm">{`Date: ${date}`}</p>
-              <div class="mt-5 flex flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
+              <div class="mt-5 flex w-56 flex-col space-y-3 text-sm font-medium text-gray-500 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2">
                 <div class="">
                  Amount
                   <span class="ml-2 mr-3 rounded-full bg-green-100 px-2 py-0.5 text-green-900">
@@ -124,9 +124,9 @@ const CheckFlight = ({ from, to, date }) => {
                     ₹5,690{" "}
                   </span>
                 </div>
-                <button class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
+                <a href="https://buy.stripe.com/test_7sIdSf7tIfi85mUdQT" class="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150">
                   Book
-                </button>
+                </a>
                 {/* <div class="">Salary:<span class="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">180-250k</span></div> */}
               </div>
             </div>
