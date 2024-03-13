@@ -6,7 +6,7 @@ import Chat from "./pages/Chat";
 import Pricing from "./pages/Pricing";
 import Navbar from "./components/Navbar";
 import CheckFlight from "./components/CheckFlight";
-import Chooselocation from "./components/Chooselocation";
+import Chooselocation from "./pages/Chooselocation";
 function App() {
   return (
     <BrowserRouter>
@@ -17,7 +17,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/pricing" element={<Pricing />} />
-        <Route path="/selectloc" element={<Chooselocation />} />
+        <Route path="/search" element={<Chooselocation />} />
         <Route path="/flights" element={<CheckFlight />} />
       </Routes>
     </BrowserRouter>

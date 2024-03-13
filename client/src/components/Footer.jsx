@@ -84,7 +84,7 @@ export default function Footer () {
     ]
 
     return (
-        <footer className="pt-10 bg-gray-800 ">
+        <footer className="pt-4 bg-gray-800 ">
             <div className="max-w-screen-xl mx-auto px-4 md:px-8">
                 <div className="justify-between items-center gap-12 md:flex">
                     <div className="flex-1 max-w-lg">
@@ -138,7 +138,7 @@ export default function Footer () {
                         ))
                     }
                 </div>
-                <div className="mt-10 py-10 border-t border-gray-700 items-center justify-between sm:flex">
+                <div className="mt-10 py-4 border-t border-gray-700 items-center justify-between sm:flex">
                     <p className="text-gray-300">© 2022 Float UI Inc. All rights reserved.</p>
                     <div className="flex items-center gap-x-6 text-gray-400 mt-6">
                         <a href="javascript:void()">
