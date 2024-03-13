@@ -13,7 +13,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="bg-gradient-to-r from-[#020D41] to-[#2e2885] ">
+      <div style={{background: 'linear-gradient(180deg,#2e2885 0%, rgba(2, 13, 65, 0.96875) 80%, rgba(2, 13, 65, 0.8) 100%)'}} className=" bg-gradient-to-r from-[#020D41] to-[#2e2885] ">
         <div className="flex flex-col h-35">
           <header className="px-4 lg:px-6 h-14 flex items-center">
             <a className="flex items-center justify-center" href="/">
@@ -30,7 +30,7 @@ const Navbar = () => {
                 <a className="text-sm font-medium hover:underline underline-offset-4" href="/chat">
                   Chat
                 </a>
-                <a className="text-sm font-medium hover:underline underline-offset-4" href="/selectloc">
+                <a className="text-sm font-medium hover:underline underline-offset-4" href="/search">
                  Flight
                 </a>
                 <a className="text-sm font-medium hover:underline underline-offset-4" href="/pricing">
