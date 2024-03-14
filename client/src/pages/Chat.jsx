@@ -9,6 +9,14 @@ const Chat = () => {
   const [chat, setChat] = useState(false);
   const [link, setLink] = useState("");
   const fileInput = useRef(null);
+  const messageRef = useRef(null);
+  const scrollToBottom = () => {
+    messageRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   useEffect(() => {
     const inputElement = document.getElementById("TextField");
@@ -19,7 +27,7 @@ const Chat = () => {
       {
         isImage: false,
         message: "hello",
-        user: "",
+        user: "AI",
       },
     ]);
   }, []);
@@ -32,7 +40,8 @@ const Chat = () => {
         message: message,
         user: localStorage.getItem("name") || "Ajay",
       };
-      setMessages([...messages, obj]);
+      // setMessages([...messages, obj]);
+      setMessage("");
       const DummyData = messages.map((msg) => {
         return {
           role: msg.user === "AI" ? "assistant" : "user",
@@ -49,7 +58,7 @@ const Chat = () => {
           message: response.data,
           user: "AI",
         };
-        setMessages([...messages, obj1]);
+        setMessages([...messages, obj, obj1]);
       }
       setMessage("");
     } else alert("Please enter a valid message");
@@ -202,7 +211,7 @@ const Chat = () => {
             </div>
           )
         )}
-
+        <div ref={messageRef}></div>
         <div className="fixed bottom-0 left-0 right-0 mt-4 flex items-center sm:p-8 py-4 text-left text-gray-700 gap-8">
           <div
             className=" cursor-pointer"
