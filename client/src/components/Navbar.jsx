@@ -19,38 +19,44 @@ const Navbar = () => {
       >
         <div className="flex flex-col h-35">
           <header className="px-4 lg:px-6 h-14 flex items-center">
-            <a className="flex items-center justify-center" href="/">
+            <Link className="flex items-center justify-center" href="/">
               <img className="h-10 w-16" src="logo_white.svg" alt="" />
               <span className="sr-only text-white">WanderLust</span>
-            </a>
+            </Link>
 
             {localStorage.getItem("email") ? (
               <nav className="text-white ml-auto flex gap-4 sm:gap-6">
-                <a
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="/"
                 >
                   Home
-                </a>
+                </Link>
 
-                <a
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="/chat"
                 >
                   Chat
-                </a>
-                <a
+                </Link>
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="/search"
                 >
-                  Flight
-                </a>
-                <a
+                  Search
+                </Link>
+                <Link
+                  className="text-sm font-medium hover:underline underline-offset-4"
+                  href="/suggest"
+                >
+                  Suggestions
+                </Link>
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="/pricing"
                 >
                   Pricing
-                </a>
+                </Link>
                 <button
                   className="text-sm font-medium hover:underline underline-offset-4"
                   onClick={handleSignOut}
@@ -60,24 +66,18 @@ const Navbar = () => {
               </nav>
             ) : (
               <nav className="text-white ml-auto flex gap-4 sm:gap-6">
-                <a
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="/"
                 >
                   Home
-                </a>
-                <a
+                </Link>
+                <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   href="#"
                 >
                   About
-                </a>
-                <a
-                  className="text-sm font-medium hover:underline underline-offset-4"
-                  href="#"
-                >
-                  Locations
-                </a>
+                </Link>
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
                   to="/login"

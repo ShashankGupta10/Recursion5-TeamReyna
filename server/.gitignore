@@ -1,3 +1,4 @@
 /environment
 .env
 venv
+__pycache__
