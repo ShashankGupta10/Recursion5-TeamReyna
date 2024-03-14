@@ -10,7 +10,6 @@ const Chooselocation = () => {
   const [trips, setTrips] = useState(false);
 
   const handleDateChange = (date) => {
-    // Update the state with the selected date
     setSelectedDate(date);
   };
   const [formData, setFormData] = useState({
@@ -38,15 +37,15 @@ const Chooselocation = () => {
         action=""
         onSubmit={handleSubmit}
       >
-        {/* <div class="bg-blue-800 px-10 py-10 text-center text-white">
-                        <p class="font-serif text-2xl font-semibold tracking-wider">Submit your request</p>
-                        <p class="text-center text-blue-100">Please keep it short and succinct</p>
+        {/* <div className="bg-blue-800 px-10 py-10 text-center text-white">
+                        <p className="font-serif text-2xl font-semibold tracking-wider">Submit your request</p>
+                        <p className="text-center text-blue-100">Please keep it short and succinct</p>
                     </div> */}
 
         <div className=" w-3/12">
           <label
             for="small"
-            class="block   mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block   mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select From
           </label>
@@ -55,19 +54,19 @@ const Chooselocation = () => {
             onChange={handleChange}
             name="from"
             id="small"
-            class="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full p-2 mb-6 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option selected>Choose country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">Mumbai</option>
-            <option value="DE">delhi</option>
+            <option value="SDF">United States</option>
+            <option value="YYZ">Canada</option>
+            <option value="BOM">Mumbai</option>
+            <option value="DEL">delhi</option>
           </select>
         </div>
         <div className=" w-3/12">
           <label
             for="default"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select To
           </label>
@@ -75,19 +74,19 @@ const Chooselocation = () => {
             value={formData.to}
             onChange={handleChange}
             name="to"
-            class="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           >
             <option selected>Choose country</option>
-            <option value="US">United States</option>
-            <option value="CA">Canada</option>
-            <option value="FR">Mumbai</option>
-            <option value="DE">delhi</option>
+            <option value="SDF">United States</option>
+            <option value="YYZ">Canada</option>
+            <option value="BOM">Mumbai</option>
+            <option value="DEL">delhi</option>
           </select>
         </div>
         <div className=" w-2/12">
           <label
             for="large"
-            class="block mb-2 text-base font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-base font-medium text-gray-900 dark:text-white"
           >
             Select Date
           </label>
@@ -102,7 +101,7 @@ const Chooselocation = () => {
         <div className="my-auto">
           <button
             onClick={handleTrips}
-            class="w-full px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+            className="w-full px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
           >
             Check Trips
           </button>
