@@ -17,6 +17,7 @@ const Chat = () => {
     }
     setMessages([
       {
+        isImage: false,
         message: "hello",
         user: "",
       },
@@ -27,17 +28,24 @@ const Chat = () => {
     if (message != "") {
       console.log(message);
       const obj = {
+        isImage: false,
         message: message,
         user: localStorage.getItem("name") || "Ajay",
       };
       setMessages([...messages, obj]);
-
+      const DummyData = messages.map((msg) => {
+        return {
+          role: msg.user === "AI" ? "assistant" : "user",
+          content: msg.message,
+        };
+      });
       const response = await axios.post("http://localhost:5000/chat", {
-        prompt: obj.message,
+        messages: DummyData,
       });
       console.log("Response from :", response);
       if (response) {
         const obj1 = {
+          isImage: false,
           message: response.data,
           user: "AI",
         };
@@ -60,6 +68,8 @@ const Chat = () => {
     }
   };
   const uploadImage = async (file) => {
+    showUploadbtn(false);
+    setOpenmodal(false);
     const formData = new FormData();
     let fileType = file.type.split("/")[1];
 
@@ -78,7 +88,12 @@ const Chat = () => {
       );
       setLink(response.data.secure_url);
       console.log(response.data.secure_url);
-
+      const obj = {
+        isImage: true,
+        message: response.data.secure_url,
+        user: localStorage.getItem("name") || "Ajay",
+      };
+      // setMessages([...messages, obj]);
       const messageFromBackend = await axios.post(
         "http://127.0.0.1:5000/get_data_from_url",
         {
@@ -87,6 +102,7 @@ const Chat = () => {
       );
       setMessages([
         ...messages,
+        obj,
         { message: messageFromBackend.data, user: "AI" },
       ]);
     } catch (e) {
@@ -105,7 +121,7 @@ const Chat = () => {
   };
 
   const handleCloseUpload = () => {
-    setChat(false);
+    // setChat(false);
     showUploadbtn(false);
     setOpenmodal(false);
   };
@@ -138,7 +154,11 @@ const Chat = () => {
               <div className="text-gray-700">
                 <div className="relative float-right sm:inline-block rounded-md bg-blue-700 py-3 px-4 text-white">
                   <p className="text-sm text-white font-bold">{msg.user}</p>
-                  <p className="text-sm">{msg.message}</p>
+                  {msg.isImage ? (
+                    <img src={msg.message} className="h-64 w-64" />
+                  ) : (
+                    <p className="text-sm">{msg.message}</p>
+                  )}
                 </div>
               </div>
               <div className="clear-both flex text-gray-700"></div>
