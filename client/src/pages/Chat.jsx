@@ -112,7 +112,7 @@ const Chat = () => {
       };
       // setMessages([...messages, obj]);
       const messageFromBackend = await axios.post(
-        "http://127.0.0.1:5000/get_data_from_url",
+        "https://wanderlust-backend-blue.vercel.app/get_data_from_url",
         {
           image: response.data.secure_url,
         }
