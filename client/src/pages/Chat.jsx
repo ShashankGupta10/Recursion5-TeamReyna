@@ -6,6 +6,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [uploadbtn, showUploadbtn] = useState(false);
   const [openmodal, setOpenmodal] = useState(false);
+  const [chat, setChat] = useState(false);
   const [link, setLink] = useState("");
   const fileInput = useRef(null);
 
@@ -47,6 +48,7 @@ const Chat = () => {
   };
 
   const handleImageAndLink = () => {
+    setChat(true);
     if (fileInput.current && fileInput.current.files[0]) {
       const image = fileInput.current.files[0];
       console.log("Image saved:", image);
@@ -97,11 +99,13 @@ const Chat = () => {
   };
 
   const handleOpenUpload = () => {
+    setChat(true);
     showUploadbtn(true);
     setOpenmodal(true);
   };
 
   const handleCloseUpload = () => {
+    setChat(false);
     showUploadbtn(false);
     setOpenmodal(false);
   };
@@ -202,6 +206,30 @@ const Chat = () => {
               />
             </svg>
           </div>
+          {!chat && (
+            <>
+              <div className=" absolute bottom-20 left-[1%] font-bold border-2 border-gray-600 p-3 rounded-xl flex">
+                Upload Your Image
+                <svg
+                  class="w-6 h-6 text-gray-700 "
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 19V5m0 14-4-4m4 4 4-4"
+                  />
+                </svg>
+              </div>
+            </>
+          )}
           {uploadbtn && (
             <div className="absolute bottom-24 left-[.5%] flex justify-center gap-4 items-center bg-gray-200 p-4 rounded-lg">
               <div className=" cursor-pointer" onClick={triggerFileInput}>
@@ -252,25 +280,28 @@ const Chat = () => {
               </div>
             </div>
           )}
+          {/* {chat && (<> */}
           <input
             placeholder="Your Message"
+            disabled={!chat}
             id="TextField"
             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             onChange={(e) => setMessage(e.target.value)}
             value={message}
           ></input>
           <button
+            disabled={!chat}
             type="submit"
-            className="relative inline-flex h-10 w-auto flex-initial cursor-pointer items-center justify-center self-center rounded-md bg-blue-700 px-6 text-center align-middle text-sm font-medium text-white outline-none focus:ring-2"
+            className="relative inline-flex h-10 w-auto flex-initial cursor-pointer items-center justify-center self-center rounded-md bg-blue-700 px-6 text-center align-middle text-sm font-medium text-white outline-none focus:ring-2 disabled:cursor-not-allowed "
             onClick={handleSend}
           >
             Send
           </button>
+          {/* </> )} */}
         </div>
       </div>
     </div>
   );
 };
 
-// Move the export statement outside of the function component
 export default Chat;
