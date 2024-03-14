@@ -19,7 +19,7 @@ const Navbar = () => {
       >
         <div className="flex flex-col h-35">
           <header className="px-4 lg:px-6 h-14 flex items-center">
-            <Link className="flex items-center justify-center" href="/">
+            <Link className="flex items-center justify-center" to="/">
               <img className="h-10 w-16" src="logo_white.svg" alt="" />
               <span className="sr-only text-white">WanderLust</span>
             </Link>
@@ -28,32 +28,32 @@ const Navbar = () => {
               <nav className="text-white ml-auto flex gap-4 sm:gap-6">
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/"
+                  to="/"
                 >
                   Home
                 </Link>
 
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/chat"
+                  to="/chat"
                 >
                   Chat
                 </Link>
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/search"
+                  to="/search"
                 >
                   Search
                 </Link>
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/suggest"
+                  to="/suggest"
                 >
                   Suggestions
                 </Link>
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/pricing"
+                  to="/pricing"
                 >
                   Pricing
                 </Link>
@@ -68,13 +68,13 @@ const Navbar = () => {
               <nav className="text-white ml-auto flex gap-4 sm:gap-6">
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="/"
+                  to="/"
                 >
                   Home
                 </Link>
                 <Link
                   className="text-sm font-medium hover:underline underline-offset-4"
-                  href="#"
+                  to="#"
                 >
                   About
                 </Link>
