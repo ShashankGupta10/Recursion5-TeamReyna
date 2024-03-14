@@ -16,7 +16,7 @@ const Login = () => {
     console.log("Form submitted", formData);
     try {
       const response = await axios.post(
-        "http://localhost:5000/login",
+        "https://wanderlust-backend-mraeyw6ht-shashankgupta10.vercel.app/login",
         formData
       );
       console.log("Response", response.data);
