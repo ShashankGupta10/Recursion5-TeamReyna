@@ -99,15 +99,21 @@ def text_to_speech():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    prompt = request.get_json()["prompt"]
-    prompt = f"{prompt}. This is the prompt from the user. Return the output in plain text in non markdown format."
+    messages = request.get_json()["messages"]
+    messages_formatted = []
+    for message in messages:
+        if message["user"].lower() == "ai":
+            messages_formatted.append({"role": "assistant", "content": message["message"]})
+        else:
+            messages_formatted.append({"role": "user", "content": message["message"]})
+
+    print(messages_formatted)
+    messages_formatted[len(messages_formatted) - 1]['content'] = f"{messages_formatted[len(messages_formatted) - 1]['content']}. This is the prompt from the user. Return the output in plain text in non markdown format."
+    # add the whole array containing the messages
     response = client.chat.completions.create(
         model="gpt-3.5-turbo-0125",
         response_format={"type": "text"},
-        messages=[
-            {"role": "system", "content": "You are a travel guide. The user is interested in traveling places and trying cuisine. Suggest places to visit and cuisines to try."},
-            {"role": "user", "content": prompt}
-        ]
+        messages=messages_formatted
     )
     print(response.choices[0].message.content)
     return jsonify(response.choices[0].message.content)
