@@ -17,8 +17,7 @@ const Chat = () => {
     setMessages([
       {
         message: "hello",
-        user: "AI",
-        audio: "",
+        user: "",
       },
     ]);
   }, []);
@@ -30,19 +29,19 @@ const Chat = () => {
         message: message,
         user: localStorage.getItem("name") || "Ajay",
       };
+      setMessages([...messages, obj]);
 
       const response = await axios.post("http://localhost:5000/chat", {
-        message: obj.message,
+        prompt: obj.message,
       });
       console.log("Response from :", response);
-
-      const obj1 = {
-        message: response.data,
-        user: "AI",
-        audio:
-          "https://file01.fpt.ai/text2speech-v5/short/2024-03-13/d625a0570a14281837aca340711ebf3e.mp3",
-      };
-      setMessages([...messages, obj, obj1]);
+      if (response) {
+        const obj1 = {
+          message: response.data,
+          user: "AI",
+        };
+        setMessages([...messages, obj1]);
+      }
       setMessage("");
     } else alert("Please enter a valid message");
   };
@@ -86,7 +85,7 @@ const Chat = () => {
       );
       setMessages([
         ...messages,
-        { message: messageFromBackend.data, user: "AI", audio: "" },
+        { message: messageFromBackend.data, user: "AI" },
       ]);
     } catch (e) {
       console.log(e);
@@ -111,15 +110,15 @@ const Chat = () => {
     fileInput.current.click();
   };
   const playAudio = async (msg) => {
-    if (msg.audio === "") {
-      const response = await axios.post("http://localhost:5000/tts", {
-        text: msg.message,
-      });
-      console.log(response);
-    }
-    // const playAudio = new Audio(audioUrl);
-    // playAudio.play();
-    // playAudio.onended = () => {};
+    let audioUrl = "";
+    const response = await axios.post("http://localhost:5000/tts", {
+      text: msg.message,
+    });
+    console.log(response.data);
+    audioUrl = "http://localhost:5000/static/speech.mp3";
+    const playAudio = new Audio(audioUrl);
+    playAudio.play();
+    playAudio.onended = () => {};
   };
   return (
     <div>

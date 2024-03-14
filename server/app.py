@@ -25,7 +25,6 @@ def application():
     return '<center style="height: 100dvh"><h1>Backend Link</h1></center>'
 
 
-
 @app.route('/register', methods=['POST', 'GET'])
 def register():
     payload = request.get_json()
@@ -38,7 +37,7 @@ def register():
             'password': payload['password']
         })
         return jsonify({'output': True})
-    return jsonify({'output':False,'message': 'EmailId already registered'})
+    return jsonify({'output': False, 'message': 'EmailId already registered'})
 
 
 @app.route('/login', methods=['POST', 'GET'])
@@ -48,9 +47,9 @@ def login():
     if user is not None:
         if user['password'] == payload['password']:
             # print(user)
-            return jsonify({'output': True , 'message': "Login successful",'name':user['name']})
-        return jsonify({'output':False,'message': "Incorrect password"})
-    return jsonify({'output':False,'message': 'No such user found'})
+            return jsonify({'output': True, 'message': "Login successful", 'name': user['name']})
+        return jsonify({'output': False, 'message': "Incorrect password"})
+    return jsonify({'output': False, 'message': 'No such user found'})
 
 
 @app.route('/get_data_from_url', methods=['POST'])
@@ -94,22 +93,24 @@ def text_to_speech():
     )
 
     response.stream_to_file(speech_file_path)
-    return send_file(speech_file_path, as_attachment=True)
+    print(speech_file_path)
+    return jsonify({'output': True, 'file_path': speech_file_path})
 
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    payload = request.get_json()
-    answer = client.chat.completions.create(
-        messages=[{
-            "role": "system",
-            "content": "You are a travel guide. The user is interested in traveling places and trying cuisine. Suggest places to visit and cuisines to try."
-        }, {
-            "role": "user",
-            "content": payload['message']
-        }],
-        model="gpt-3.5-turbo")
-    return jsonify(answer['choices'][0]['message']['content'])
+    prompt = request.get_json()["prompt"]
+    prompt = f"{prompt}. This is the prompt from the user. Return the output in plain text in non markdown format."
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo-0125",
+        response_format={"type": "text"},
+        messages=[
+            {"role": "system", "content": "You are a travel guide. The user is interested in traveling places and trying cuisine. Suggest places to visit and cuisines to try."},
+            {"role": "user", "content": prompt}
+        ]
+    )
+    print(response.choices[0].message.content)
+    return jsonify(response.choices[0].message.content)
 
 
 if __name__ == '__main__':
