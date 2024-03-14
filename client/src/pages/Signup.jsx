@@ -18,7 +18,7 @@ const Signup = () => {
     console.log("Form submitted", formData);
     try {
       const response = await axios.post(
-        "https://wanderlust-backend-mraeyw6ht-shashankgupta10.vercel.app/register",
+        "https://wanderlust-backend-blue.vercel.app/register",
         formData
       );
       console.log("Response", response.data);

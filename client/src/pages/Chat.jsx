@@ -56,7 +56,7 @@ const Chat = () => {
         };
       });
       console.log("Dummy", DummyData);
-      const response = await axios.post("https://wanderlust-backend-mraeyw6ht-shashankgupta10.vercel.app/chat", {
+      const response = await axios.post("https://wanderlust-backend-blue.vercel.app/chat", {
         messages: [...DummyData, { role: "user", content: message }],
       });
       console.log("Response from :", response);
@@ -148,11 +148,11 @@ const Chat = () => {
   };
   const playAudio = async (msg) => {
     let audioUrl = "";
-    const response = await axios.post("https://wanderlust-backend-mraeyw6ht-shashankgupta10.vercel.app/tts", {
+    const response = await axios.post("https://wanderlust-backend-blue.vercel.app/tts", {
       text: msg.message,
     });
     console.log(response.data);
-    audioUrl = "https://wanderlust-backend-mraeyw6ht-shashankgupta10.vercel.app/static/speech.mp3";
+    audioUrl = "https://wanderlust-backend-blue.vercel.app/static/speech.mp3";
     const playAudio = new Audio(audioUrl);
     playAudio.play();
     playAudio.onended = () => {};
