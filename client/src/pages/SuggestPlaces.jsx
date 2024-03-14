@@ -1,5 +1,9 @@
 import "react-datepicker/dist/react-datepicker.css";
+import { Link, useNavigate } from "react-router-dom";
+
 const SuggestPlaces = () => {
+  const navigate = useNavigate();
+
   const trips = [
     {
       image: "https://assets.serenity.co.uk/58000-58999/58779/1296x864.jpg",
@@ -88,10 +92,14 @@ const SuggestPlaces = () => {
                   </div>
                   <a
                     href="https://buy.stripe.com/test_28oeWj29ogmc3eMcMO"
-                    className="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05]  transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setTimeout(() => navigate("/ticket"), 100)}
+                    className="w-2/6 mx-auto px-4 py-2 text-white hover:scale-[1.05] transition-[scale_1s_ease_in_out] font-medium bg-[#1F1979] hover:bg-indigo-500 active:bg-indigo-600 rounded-lg duration-150"
                   >
                     Book
                   </a>
+
                   {/* <div className="">Salary:<span className="ml-2 mr-3 rounded-full bg-blue-100 px-2 py-0.5 text-blue-900">180-250k</span></div> */}
                 </div>
               </div>

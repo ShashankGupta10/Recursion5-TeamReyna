@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import CheckFlight from "./components/CheckFlight";
 import Chooselocation from "./pages/Chooselocation";
 import SuggestPlaces from "./pages/SuggestPlaces";
+import Ticket from "./components/Ticket";
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/search" element={<Chooselocation />} />
         <Route path="/suggest" element={<SuggestPlaces />} />
+        <Route path="/ticket" element={<Ticket />} />
         <Route path="/flights" element={<CheckFlight />} />
       </Routes>
     </BrowserRouter>
