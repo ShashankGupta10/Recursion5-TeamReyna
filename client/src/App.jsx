@@ -7,10 +7,11 @@ import Pricing from "./pages/Pricing";
 import Navbar from "./components/Navbar";
 import CheckFlight from "./components/CheckFlight";
 import Chooselocation from "./pages/Chooselocation";
+import SuggestPlaces from "./pages/SuggestPlaces";
 function App() {
   return (
     <BrowserRouter>
-        <Navbar />
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
@@ -18,6 +19,7 @@ function App() {
         <Route path="/chat" element={<Chat />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/search" element={<Chooselocation />} />
+        <Route path="/suggest" element={<SuggestPlaces />} />
         <Route path="/flights" element={<CheckFlight />} />
       </Routes>
     </BrowserRouter>
