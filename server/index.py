@@ -12,9 +12,9 @@ client = OpenAI(api_key=os.environ['OPENAI_API_KEY'])
 
 
 app = Flask(__name__)
+CORS(app)
 
 app.config['MONGO_URI'] = os.environ['MONGO_URI']
-CORS(app)
 db = PyMongo(app).db
 llm = Cohere(cohere_api_key=os.environ['COHERE_API_KEY'])
 chat_llm = ChatCohere(cohere_api_key=os.environ['COHERE_API_KEY'])
