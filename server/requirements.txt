@@ -1,6 +1,6 @@
-flask
-flask-cors
-flask-pymongo
+Flask
+Flask-Cors
+Flask-pymongo
 requests
 python-dotenv
 cohere
