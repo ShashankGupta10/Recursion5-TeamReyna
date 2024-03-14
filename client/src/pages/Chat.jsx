@@ -41,15 +41,23 @@ const Chat = () => {
         user: localStorage.getItem("name") || "Ajay",
       };
       // setMessages([...messages, obj]);
-      setMessage("");
-      const DummyData = messages.map((msg) => {
+      // setMessage("");
+      let DummyData = messages.map((msg) => {
+        if (msg.user !== "AI" && msg.isImage === true) {
+          return {
+            role: "system",
+            content:
+              "You are a specialist travel planner. Return the output in plain text in non markdown format.",
+          };
+        }
         return {
           role: msg.user === "AI" ? "assistant" : "user",
           content: msg.message,
         };
       });
+      console.log("Dummy", DummyData);
       const response = await axios.post("http://localhost:5000/chat", {
-        messages: DummyData,
+        messages: [...DummyData, { role: "user", content: message }],
       });
       console.log("Response from :", response);
       if (response) {

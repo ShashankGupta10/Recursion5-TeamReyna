@@ -17,7 +17,7 @@ const CheckFlight = ({ from, to, date }) => {
     <div>
       <section className="py-1  ">
         <h1 className="mb-4  text-center font-sans text-5xl font-bold text-gray-900">
-          Flights Accomodations<span className="text-blue-600">.</span>
+          Flights Accomodations
         </h1>
         <div className=" mx-auto flex flex-col w-full  gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
           <div className="group mx-2 mt-10 w-10/12 flex flex-row  space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto">
