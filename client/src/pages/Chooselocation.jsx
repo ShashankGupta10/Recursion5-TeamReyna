@@ -42,7 +42,7 @@ const Chooselocation = () => {
 
         <div className=" w-3/12">
           <label
-            for="small"
+            htmlFor="small"
             className="block   mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select From
@@ -63,7 +63,7 @@ const Chooselocation = () => {
         </div>
         <div className=" w-3/12">
           <label
-            for="default"
+            htmlFor="default"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Select To
@@ -83,7 +83,7 @@ const Chooselocation = () => {
         </div>
         <div className=" w-2/12">
           <label
-            for="large"
+            htmlFor="large"
             className="block mb-2 text-base font-medium text-gray-900 dark:text-white"
           >
             Select Date
