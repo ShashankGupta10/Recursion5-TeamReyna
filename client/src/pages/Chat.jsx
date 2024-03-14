@@ -248,7 +248,7 @@ const Chat = () => {
               <div className=" absolute bottom-20 left-[1%] font-bold border-2 border-gray-600 p-3 rounded-xl flex">
                 Upload Your Image
                 <svg
-                  class="w-6 h-6 text-gray-700 "
+                  className="w-6 h-6 text-gray-700 "
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -258,9 +258,9 @@ const Chat = () => {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M12 19V5m0 14-4-4m4 4 4-4"
                   />
                 </svg>

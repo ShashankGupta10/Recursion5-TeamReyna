@@ -1,5 +1,5 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react";
 import { getUser } from "../auth.js";
 import { Link } from "react-router-dom";
 const CheckFlight = ({ from, to, date }) => {
@@ -17,7 +17,7 @@ const CheckFlight = ({ from, to, date }) => {
     <div>
       <section className="py-1  ">
         <h1 className="mb-4  text-center font-sans text-5xl font-bold text-gray-900">
-          Flights Accomodations
+          Flights Accommodations
         </h1>
         <div className=" mx-auto flex flex-col w-full  gap-4 p-2 md:grid-cols-2 lg:grid-cols-3">
           <div className="group mx-2 mt-10 w-10/12 flex flex-row  space-x-8 overflow-hidden rounded-lg border py-8 text-gray-700 shadow transition hover:shadow-lg sm:mx-auto">
@@ -43,11 +43,11 @@ const CheckFlight = ({ from, to, date }) => {
                 IndiGo{" "}
               </a>
               <p>
-                IndiGo is India's largest and most preferred passenger airline
-                and amongst the fastest growing airlines in the world. We have a
-                simple philosophy: offer fares that are affordable, flights that
-                are on time, and provide a courteous and hassle-free travel
-                experience across our unparalleled network.
+                IndiGo is India&apos;s largest and most preferred passenger
+                airline and amongst the fastest growing airlines in the world.
+                We have a simple philosophy: offer fares that are affordable,
+                flights that are on time, and provide a courteous and
+                hassle-free travel experience across our unparalleled network.
               </p>
               <h2 className="text-slate-700">{`${from} to ${to}`}</h2>
               <p className="text-slate-400 mt-1 text-sm">{`Date: ${date}`}</p>

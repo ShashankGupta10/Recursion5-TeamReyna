@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
@@ -29,7 +28,6 @@ const Chooselocation = () => {
     setTrips(true);
   };
 
-  const navigate = useNavigate();
   return (
     <div>
       <form
